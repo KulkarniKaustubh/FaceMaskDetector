@@ -30,6 +30,7 @@ while True:
     imgCopy = img.copy()
     imgCopy = cv2.cvtColor(imgCopy, cv2.COLOR_BGR2RGB)
     imgCopy = cv2.resize(imgCopy, (300, 300)) # trained on (300, 300)
+    imgCopy = imgCopy/255.   # normalizing
     imgCopy = np.expand_dims(imgCopy, axis = 0) # this is done since the model is trained on mini batches, it has to have a 4D shape
     imgCopyTensor = tf.convert_to_tensor(imgCopy) # this is done to pass image as a tensor input to the model
 
