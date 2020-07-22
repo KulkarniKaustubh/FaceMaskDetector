@@ -36,7 +36,7 @@ while True:
 
     prediction = model.predict(imgCopyTensor, steps = 1) # only 1 frame at a time
 
-    print(prediction)
+    # print(prediction)
 
     drawRectangle(img, prediction)
 
